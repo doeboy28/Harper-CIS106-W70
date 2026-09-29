@@ -1,0 +1,21 @@
+file = open("employees.txt", "r")
+total_bonus = 0
+last_name = file.readline().strip()
+while last_name != "":
+    salary = float(file.readline())
+    if salary >= 100000:
+        bonus_rate = 0.20
+    elif salary >= 50000:
+        bonus_rate = 0.15
+    else:
+        bonus_rate = 0.10
+        
+    bonus = salary * bonus_rate
+
+    print(last_name, f"${salary:.2f}", f"${bonus:.2f}")
+
+    total_bonus += bonus
+
+    last_name = file.readline().strip()
+file.close()
+print(f"Total bonuses paid: ${total_bonus:.2f}")
