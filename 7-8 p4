@@ -1,0 +1,24 @@
+file = open("items.txt", "r")
+total = 0
+count = 0
+item = file.readline().strip()
+while item != "":
+    quantity = int(file.readline())
+    price = float(file.readline())
+
+    extended_price = quantity * price
+
+    print(item, quantity, f"${price:.2f}", f"${extended_price:.2f}")
+
+    total += extended_price
+    count += 1
+
+    item = file.readline().strip()
+
+file.close()
+
+average = total / count
+
+print(f"Total extended prices: ${total:.2f}")
+print(f"Number of orders: {count}")
+print(f"Average order: ${average:.2f}")
