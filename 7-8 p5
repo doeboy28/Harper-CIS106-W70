@@ -1,0 +1,27 @@
+file = open("students.txt", "r")
+
+total_tuition = 0
+student_count = 0
+
+last_name = file.readline().strip()
+
+while last_name != "":
+    district = file.readline().strip()
+    credits = int(file.readline())
+
+    if district == "I":
+        tuition = credits * 250
+    else:
+        tuition = credits * 500
+
+    print(last_name, credits, f"${tuition:.2f}")
+
+    total_tuition += tuition
+    student_count += 1
+
+    last_name = file.readline().strip()
+
+file.close()
+
+print(f"Total tuition owed: ${total_tuition:.2f}")
+print(f"Number of students: {student_count}")
