@@ -1,0 +1,22 @@
+def batting_average(hits, at_bats):
+    return hits / at_bats
+
+player_count = 0
+
+while True:
+    last_name = input("Enter player's last name (STOP to end): ")
+
+    if last_name.upper() == "STOP":
+        break
+
+    hits = int(input("Enter number of hits: "))
+    at_bats = int(input("Enter number of at bats: "))
+
+    average = batting_average(hits, at_bats)
+
+    print("Last Name:", last_name)
+    print("Batting Average:", format(average, ".3f"))
+
+    player_count += 1
+
+print("Number of players entered:", player_count)
