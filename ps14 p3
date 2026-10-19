@@ -1,0 +1,38 @@
+class Student:
+    def __init__(self, first_name, last_name, district_code, credits):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.district_code = district_code
+        self.credits = credits
+
+    def calculate_tuition(self):
+        tuition_rates = {
+            "I": 250,
+            "O": 500,
+            "X": 800,
+            "G": 250
+        }
+
+        tuition = self.credits * tuition_rates[self.district_code]
+        return tuition
+
+
+# Create student objects
+student1 = Student("Kevin", "White", "I", 12)
+student2 = Student("Mary", "Johnson", "O", 12)
+student3 = Student("David", "Chan", "X", 12)
+student4 = Student("Sarah", "James", "G", 12)
+
+# Store students in a list
+students = [student1, student2, student3, student4]
+
+# Display student information
+print("Student Tuition Information")
+print("---------------------------")
+
+for student in students:
+    print("Student Name:", student.first_name, student.last_name)
+    print("District Code:", student.district_code)
+    print("Enrolled Credits:", student.credits)
+    print("Tuition Owed: $", format(student.calculate_tuition(), ".2f"))
+    print()
