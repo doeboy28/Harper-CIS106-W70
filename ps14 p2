@@ -1,0 +1,35 @@
+
+class Student:
+    def __init__(self, first_name, last_name, district_code, credits):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.district_code = district_code
+        self.credits = credits
+
+    def calculate_tuition(self):
+        if self.district_code == "I":
+            tuition = self.credits * 250
+        else:
+            tuition = self.credits * 500
+
+        return tuition
+        
+# Create student objects
+student1 = Student("Kevin", "Whitter", "I", 12)
+student2 = Student("Mary", "Johnson", "O", 12)
+
+# Display student 1
+print("Student Tuition Information")
+print("---------------------------")
+print("Student Name:", student1.first_name, student1.last_name)
+print("District Code:", student1.district_code)
+print("Enrolled Credits:", student1.credits)
+print("Tuition Owed: $", format(student1.calculate_tuition(), ".2f"))
+
+print()
+
+# Display student 2
+print("Student Name:", student2.first_name, student2.last_name)
+print("District Code:", student2.district_code)
+print("Enrolled Credits:", student2.credits)
+print("Tuition Owed: $", format(student2.calculate_tuition(), ".2f"))
